@@ -3,7 +3,7 @@
  * Gestisce l'interazione utente e l'interfaccia
  */
 import { fetchBooksByCategory, fetchBookDetails, getBookCoverUrl, fetchTrendingBooks } from './api.js';
-import '../css/style.css';
+// Rimossa l'importazione CSS che non funziona con i moduli ES6 in browser
 
 // Variabili globali
 let bookModal;
