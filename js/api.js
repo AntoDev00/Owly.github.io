@@ -25,30 +25,29 @@ export const fetchBooksByCategory = async (category) => {
     
     console.log('Fetching books from URL:', url);
     
-    // Eseguiamo la chiamata API con timeout
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 10000);
-    
-    const response = await fetch(url, { 
-      signal: controller.signal,
-      headers: {
-        'Accept': 'application/json'
+    try {
+      // Eseguiamo la chiamata API senza timeout (rimuoviamo AbortController)
+      const response = await fetch(url, { 
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      // Verifichiamo se la risposta è ok
+      if (!response.ok) {
+        throw new Error(`Errore nella ricerca: ${response.status}`);
       }
-    });
-    
-    clearTimeout(timeoutId);
-    
-    // Verifichiamo se la risposta è ok
-    if (!response.ok) {
-      throw new Error(`Errore nella ricerca: ${response.status}`);
+      
+      // Convertiamo la risposta in JSON
+      const data = await response.json();
+      console.log('API response:', data);
+      
+      // Restituiamo i dati
+      return data;
+    } catch (error) {
+      console.error('Errore durante il recupero dei libri:', error);
+      throw error;
     }
-    
-    // Convertiamo la risposta in JSON
-    const data = await response.json();
-    console.log('API response:', data);
-    
-    // Restituiamo i dati
-    return data;
   } catch (error) {
     console.error('Errore durante il recupero dei libri:', error);
     throw error;
@@ -129,28 +128,28 @@ export const fetchTrendingBooks = async (limit = 100) => {
     // Utilizziamo l'API di categoria per ottenere libri recenti
     const url = `${BASE_URL}/subjects/${randomCategory}.json?limit=${limit}`;
     
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 10000);
-    
-    const response = await fetch(url, { 
-      signal: controller.signal,
-      headers: {
-        'Accept': 'application/json'
+    try {
+      // Eseguiamo la chiamata API senza timeout (rimuoviamo AbortController)
+      const response = await fetch(url, { 
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      // Verifichiamo se la risposta è ok
+      if (!response.ok) {
+        throw new Error(`Errore nel recupero dei libri in tendenza: ${response.status}`);
       }
-    });
-    
-    clearTimeout(timeoutId);
-    
-    // Verifichiamo se la risposta è ok
-    if (!response.ok) {
-      throw new Error(`Errore nel recupero dei libri in tendenza: ${response.status}`);
+      
+      // Convertiamo la risposta in JSON
+      const data = await response.json();
+      console.log('Trending books response:', data);
+      
+      return data;
+    } catch (error) {
+      console.error('Errore durante il recupero dei libri in tendenza:', error);
+      throw error;
     }
-    
-    // Convertiamo la risposta in JSON
-    const data = await response.json();
-    console.log('Trending books response:', data);
-    
-    return data;
   } catch (error) {
     console.error('Errore durante il recupero dei libri in tendenza:', error);
     throw error;
