@@ -60,13 +60,11 @@ Per creare una build ottimizzata per la produzione:
 npm run build
 ```
 
-I file compilati saranno disponibili nella cartella `dist/`.
 
 ## 🧠 Architettura del Progetto
 
 ```
 owly.github.io/
-├── dist/                 # Directory di output per la build
 ├── src/                  # Codice sorgente
 │   ├── css/              # File CSS
 │   │   └── style.css     # Stili personalizzati
@@ -81,6 +79,8 @@ owly.github.io/
 ├── webpack.config.js     # Configurazione webpack
 └── README.md             # Documentazione del progetto
 ```
+
+*Nota: La cartella `dist/` (contenente i file compilati) viene generata automaticamente quando si esegue il comando `npm run build` e non è inclusa nel repository.*
 
 ## 🔍 API Utilizzate
 
