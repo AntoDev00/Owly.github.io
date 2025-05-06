@@ -28,7 +28,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './index.html',
       // Rimuovo il riferimento al favicon che non esiste
     }),
     new Dotenv(),
