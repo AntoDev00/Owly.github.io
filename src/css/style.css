@@ -1,0 +1,105 @@
+/* Stili personalizzati per Owly */
+
+:root {
+  --owly-primary: #4e73df;
+  --owly-secondary: #f8f9fc;
+  --owly-accent: #f6c23e;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fc;
+  color: #333;
+}
+
+.card {
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+  background-color: var(--owly-primary);
+  border-color: var(--owly-primary);
+}
+
+.btn-primary:hover {
+  background-color: #375ad3;
+  border-color: #375ad3;
+}
+
+.book-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card .card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card .card-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.book-card .book-authors {
+  color: #666;
+  font-style: italic;
+  margin-bottom: auto;
+}
+
+.book-card .card-footer {
+  background-color: var(--owly-secondary);
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+#search-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(78, 115, 223, 0.25);
+  border-color: #bac8f3;
+}
+
+.modal-content {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.modal-header {
+  background-color: var(--owly-primary);
+  color: white;
+}
+
+.book-cover {
+  max-width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.text-primary {
+  color: var(--owly-primary) !important;
+}
+
+/* Stili per animazioni */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Stili responsive */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

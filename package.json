@@ -1,0 +1,35 @@
+{
+  "name": "owly",
+  "version": "1.0.0",
+  "description": "Applicazione web per incentivare la lettura dei libri, integrata con Open Library API",
+  "main": "src/js/app.js",
+  "scripts": {
+    "start": "webpack serve",
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "libri",
+    "lettura",
+    "open-library",
+    "educazione",
+    "javascript"
+  ],
+  "author": "Owly Team",
+  "license": "MIT",
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.6",
+    "dotenv": "^16.3.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "css-loader": "^6.8.1",
+    "dotenv-webpack": "^8.0.1",
+    "html-webpack-plugin": "^5.5.3",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
