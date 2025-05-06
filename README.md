@@ -9,7 +9,7 @@
 
 **Owly** è un'applicazione web interattiva che incentiva la lettura dei libri integrando il servizio Open Library API. L'applicazione permette agli utenti di cercare libri per categoria e visualizzarne i dettagli in modo semplice e intuitivo.
 
-### [Prova l'applicazione](https://owly.github.io/) 🚀
+### [Prova l'applicazione](https://antodev00.github.io/Owly.github.io/) 🚀
 
 ## 🌟 Caratteristiche
 
@@ -110,7 +110,7 @@ Per domande o suggerimenti, non esitare a contattarci:
 
 - **Email**: aabbruzzeselive@gmail.com
 - **GitHub**: [Owly GitHub](https://github.com/AntoDev00)
-- **Website**: [Owly.com](https://www.owly.com)
+- **Website**: [Owly.com](https://antodev00.github.io/Owly.github.io/)
 
 ---
 
